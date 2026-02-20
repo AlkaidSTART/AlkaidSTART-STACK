@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AlkaidLight Blog 🌟
 
-## Getting Started
+> A modern, AI-friendly personal blog built with **Next.js (App Router)** and **Vibe Coding** philosophy.
 
-First, run the development server:
+## 👋 About Me (自我介绍)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Hello! I'm **Alkaid**, a passionate developer exploring the frontiers of software engineering and AI.
+
+This blog is my digital garden where I share:
+- 🚀 Tech insights and tutorials
+- 🤖 AI experiments and MCP integrations
+- 💡 Thoughts on "Vibe Coding" and modern development workflows
+
+## 🛠️ Tech Stack
+
+This project is built with a cutting-edge stack designed for performance and developer experience:
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router, SSG)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Content**: MDX (Markdown + React)
+- **Search**: [Pagefind](https://pagefind.app/) (Static, client-side search)
+- **Comments**: [Giscus](https://giscus.app/) (GitHub Discussions)
+- **Deployment**: GitHub Actions + GitHub Pages
+- **AI Integration**: Custom MCP Endpoint for AI Agents
+
+## 🚀 Getting Started
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/AlkaidSTART/AlkaidSTART-STACK.git
+    cd alkaidlight
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Run development server**:
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view it.
+
+4.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+    This will generate the static site in the `out` directory and index the content for search.
+
+## 📝 Writing Posts
+
+Create a new `.mdx` file in `content/posts/`:
+
+```markdown
+---
+title: 'My New Post'
+date: '2026-02-20'
+description: 'Description for SEO'
+tags: ['nextjs', 'coding']
+---
+
+# Content starts here...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤖 AI Access (MCP)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This blog exposes its content via a Model Context Protocol (MCP) compatible endpoint at:
+`https://your-domain.com/api/mcp.json`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+AI agents can use this to index and understand your blog posts automatically.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 AlkaidLight. Built with ❤️ and 🤖.
