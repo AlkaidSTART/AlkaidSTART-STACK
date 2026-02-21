@@ -9,15 +9,16 @@ export default function Home() {
         <img src={`${basePath}/avatorone.jpg`} alt="AlkaidLight" className="h-16" />
       </h1>
       <p className="mb-10 max-w-2xl text-xl text-gray-600 dark:text-gray-300">
-        A personal blog built with Next.js, Vibe Coding, and AI.
-        Exploring the future of software development.
+        <span className="lang-en">A personal blog built with Next.js, Vibe Coding, and AI. Exploring the future of software development.</span>
+        <span className="lang-zh">一个使用 Next.js、Vibe Coding 与 AI 构建的个人博客，探索软件开发的未来。</span>
       </p>
       <div className="flex gap-4">
         <Link
           href="/blog"
           className="rounded-full bg-blue-600 px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
         >
-          Read Blog
+          <span className="lang-en">Read Blog</span>
+          <span className="lang-zh">阅读博客</span>
         </Link>
         <a
           href="https://github.com"

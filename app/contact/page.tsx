@@ -7,7 +7,8 @@ export default function Contact() {
         <img src={`${basePath}/avatorone.jpg`} alt="AlkaidLight" className="h-16" />
       </h1>
       <p className="mb-10 max-w-2xl text-xl text-gray-600 dark:text-gray-300">
-        A personal blog built with Next.js, Vibe Coding, and AI.
+        <span className="lang-en">A personal blog built with Next.js, Vibe Coding, and AI.</span>
+        <span className="lang-zh">一个使用 Next.js、Vibe Coding 与 AI 构建的个人博客。</span>
       </p>
     </div>
   );

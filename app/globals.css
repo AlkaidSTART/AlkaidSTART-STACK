@@ -26,3 +26,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html:not([data-lang]) .lang-zh {
+  display: none;
+}
+
+html[data-lang="en"] .lang-zh {
+  display: none;
+}
+
+html[data-lang="zh"] .lang-en {
+  display: none;
+}
+
+/* Language Toggle Button Styles */
+.toggle-bg {
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.toggle-text-en,
+.toggle-text-zh {
+  transition: color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html[data-lang="en"] .toggle-bg {
+  transform: translateX(0);
+}
+html[data-lang="zh"] .toggle-bg {
+  transform: translateX(100%);
+}
+
+/* Active Text Color */
+html[data-lang="en"] .toggle-text-en,
+html[data-lang="zh"] .toggle-text-zh {
+  color: #000;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-lang="en"] .toggle-text-en,
+  html[data-lang="zh"] .toggle-text-zh {
+    color: #fff;
+  }
+}
+
+/* Inactive Text Color */
+html[data-lang="en"] .toggle-text-zh,
+html[data-lang="zh"] .toggle-text-en {
+  color: #9ca3af;
+}
