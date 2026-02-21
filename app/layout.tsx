@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import weblogo from "../public/logo1.png";
+import avatorone from "../public/avatorone.jpg";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   title: "AlkaidLight Blog",
   description: "A Vibe Coding Blog",
   icons: {
-    icon: "/logo3.png",
+    icon: "/avatorone.jpg",
   },
 };
 
