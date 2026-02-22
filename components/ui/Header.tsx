@@ -44,7 +44,7 @@ export function Header() {
 
   return (
     <div className="fixed top-6 left-1/2 z-50 w-full max-w-5xl -translate-x-1/2 px-4">
-      <header className="flex h-16 items-center justify-between rounded-full border border-white/20 bg-white/70 px-4 shadow-xl backdrop-blur-xl transition-colors duration-300 dark:bg-black/70 dark:border-white/10 supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
+      <header className="flex h-16 items-center justify-between rounded-full border border-white/20 bg-white/30 px-4 shadow-lg shadow-black/5 backdrop-blur-[20px] backdrop-saturate-150 transition-all duration-300 dark:bg-black/30 dark:border-white/10 dark:shadow-white/5 supports-[backdrop-filter]:bg-white/20 dark:supports-[backdrop-filter]:bg-black/20">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
             <img src={`${basePath}/avatorone.jpg`} alt="AlkaidLight" className="h-9 w-9 rounded-full border border-white/20" />
