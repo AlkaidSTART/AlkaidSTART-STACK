@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Home, BookOpen, User, Mail, Github, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Search from '../Search';
+import { usePageStore } from '@/stores/pageStore';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -19,12 +20,38 @@ const navItems = [
 
 export function Header() {
   const pathname = usePathname();
-  const [lang, setLang] = useState<'en' | 'zh'>('en');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const headerRef = useRef<HTMLHeadElement>(null);
+  const { 
+    isBlogPost, 
+    isAboutPage, 
+    isContactPage, 
+    setIsBlogPost, 
+    setIsAboutPage, 
+    setIsContactPage, 
+    resetPageStates 
+  } = usePageStore();
 
+  // 检测当前页面类型
   useEffect(() => {
-    // 路由变化时重置移动菜单状态
+    const isBlogArticle = pathname?.startsWith('/blog/') && pathname !== '/blog';
+    const isAbout = pathname === '/about';
+    const isContact = pathname === '/contact';
+
+    if (isBlogArticle) {
+      setIsBlogPost(true);
+    } else if (isAbout) {
+      setIsAboutPage(true);
+    } else if (isContact) {
+      setIsContactPage(true);
+    } else {
+      // 在主页或其他页面时重置状态
+      resetPageStates();
+    }
+  }, [pathname, setIsBlogPost, setIsAboutPage, setIsContactPage, resetPageStates]);
+
+  // 路由变化时关闭移动菜单
+  useEffect(() => {
     const handleRouteChange = () => {
       setMobileMenuOpen(false);
     };
@@ -42,24 +69,22 @@ export function Header() {
       // 设置文档语言属性
       document.documentElement.dataset.lang = initial;
       localStorage.setItem('lang', initial);
-      
-      // 如果与默认语言不同，更新状态
-      if (initial !== 'en') {
-        setLang(initial as 'en' | 'zh');
-      }
     };
     
     initializeLanguage();
   }, []);
 
   const toggleLang = () => {
-    setLang((current) => {
-      const next = current === 'en' ? 'zh' : 'en';
-      document.documentElement.dataset.lang = next;
-      localStorage.setItem('lang', next);
-      return next;
-    });
+    const currentLang = document.documentElement.dataset.lang || 'en';
+    const next = currentLang === 'en' ? 'zh' : 'en';
+    document.documentElement.dataset.lang = next;
+    localStorage.setItem('lang', next);
   };
+
+  // 如果在博客文章、关于或联系页面，不显示header
+  if (isBlogPost || isAboutPage || isContactPage) {
+    return null;
+  }
 
   return (
     <div className="fixed top-6 left-1/2 z-50 w-full max-w-5xl -translate-x-1/2 px-4">
